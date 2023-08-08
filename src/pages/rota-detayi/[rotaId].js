@@ -12,7 +12,7 @@ const TourDetailss = () => {
     const { rotaId } = router.query;
     
   return (
-    <Layout pageTitle="Tur Detayları">
+    <Layout pageTitle="Rota Detayları">
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>

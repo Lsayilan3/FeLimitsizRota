@@ -50,7 +50,7 @@ const MobileMenu = () => {
           </li>
           <li>
             <i className="fa fa-phone-alt"></i>
-            <a href="tel:+09 532 604 37 30">+09 532 604 37 30</a>
+            <a href="tel:+0 532 604 37 30">+0 532 604 37 30</a>
           </li>
         </ul>
         <div className="mobile-nav__top">

@@ -2,7 +2,7 @@ import bg from "@/images/backgrounds/gorsel.jpg";
 
 const videoOne = {
   bg,
-  videoId: "Get7rqXYrbQ",
+  videoId: "6FvMDm-Mm30",
   tagline: "Seyahat etmeye hazır mısın?",
   title: "Limitsiz Rota, Türkiye Lideri Online Gezi Platformudur ",
   iconBoxes: [

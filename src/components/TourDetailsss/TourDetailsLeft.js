@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { fetchData, fetchDataList, fetchGunler, fetchPhotos, fetchRota, getPhotoUrl } from "./Service/rotaDetayiService";
+import { fetchPuans, fetchDataList, fetchGunler, fetchPhotos, fetchRota, getPhotoUrl } from "./Service/rotaDetayiService";
 
 
 
@@ -29,10 +29,11 @@ const TourDetailsLeft = ({ userSelect = false }) => {
   useEffect(() => {
     fetchDataList().then((data) => setDataList(data));
     fetchPhotos().then((data) => setFoto(data));
-    fetchData(rotaId).then((data) => setData(data));
+    fetchPuans(rotaId).then((data) => setData(data));
     fetchGunler(rotaId).then((data) => setGunler(data));
     fetchRota(rotaId).then((data) => setRota(data));
   }, [rotaId]);
+  
   const photoUrl = getPhotoUrl();
 
   const images = foto
@@ -43,7 +44,7 @@ const TourDetailsLeft = ({ userSelect = false }) => {
       originalAlt: data.baslik,
       thumbnailAlt: data.baslik,
     }));
-    
+
   const filteredDataList = dataList
     .filter((data) => data.rotaId === Number(rotaId) && data.yayin !== "2")
     .sort((a, b) => a.sira - b.sira);
@@ -87,7 +88,7 @@ const TourDetailsLeft = ({ userSelect = false }) => {
                     <h1 style={{ marginBottom: '4px', fontFamily: 'Asap Condensed, sans-serif', color: '#202020', fontWeight: 700, }}
                       className="tour-details-two__title" >{data.baslik}</h1>
                     <Image style={{ borderRadius: 0, }}
-                      src={photoUrl + data.foto}
+                      src={photoUrl + data.foto} alt=""
                     />
                   </Col>
                   <Col xl={3}></Col>
@@ -131,35 +132,26 @@ const TourDetailsLeft = ({ userSelect = false }) => {
           </div>
         ))}
         <br />
-        <div style={{ paddingBottom: 50 }} className="tour-details-two__location">
-          <h2 style={{ color: "gray" }} className="tour-details-two__title">Tur Konum</h2>
-          {data && data.harita ? (
-            <iframe
-              src={data.harita} // Use data.harita if it exists
-              className="tour-details-two__location-map"
-              allowFullScreen
-            ></iframe>
-          ) : (
-            <p>Loading map...</p>
-          )}
+        <div style={{ paddingBottom: 40 }} className="tour-details-two__location">
+          <h2 style={{ marginBottom: '4px', fontFamily: 'Asap Condensed, sans-serif', color: '#202020', fontWeight: 700, }} className="tour-details-two__title">Tur Konum</h2>
+          {data.map((item, index) => (
+          <iframe key={item.ıd}
+            src={data[0].harita} // Use data.harita if it exists
+            className=""
+            width="100%" // İstediğiniz genişlik değeri
+            height="580" // İstediğiniz yükseklik değeri
+            frameBorder="0"
+            scrolling="no"
+            allowFullScreen
+          ></iframe>
+          ))}
         </div>
+
         <br />
-        <h3 className="tour-details-two__title review-scores__title">
+        <h3 style={{ marginBottom: '4px', fontFamily: 'Asap Condensed, sans-serif', color: '#202020', fontWeight: 700, }} className="tour-details-two__title review-scores__title">
           İnceleme Puanları
         </h3>
-        <div style={{ marginBottom: 100, }} className="tour-details__review-score">
-          <div className="tour-details__review-score-ave">
-            <div className="my-auto">
-              <h3 style={{ marginLeft: 4 }}>{data.genelPuan}</h3>
-              <p>
-                <i className="fa fa-star"></i> Mükemmel
-              </p>
-            </div>
-          </div>
-          <div className="tour-details__review-score__content">
             <ReviewScoreBar />
-          </div>
-        </div>
         {/* <ReviewForm reviews={reviews} /> */}
       </Col>
     </>

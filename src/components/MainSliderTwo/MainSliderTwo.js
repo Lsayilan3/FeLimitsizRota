@@ -1,11 +1,6 @@
 import React from "react";
 import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SingleSlide from "./SingleSlide";
-import { useState } from "react";
-import axios from "axios";
-import { useEffect } from "react";
-import Preloader from "../Preloader/Preloader";
 import { Container } from "react-bootstrap";
 import Link from "next/link";
 
@@ -28,12 +23,11 @@ const mainSlideOptions = {
 const MainSliderTwo = () => {
   return (
     <section className="main-slider tour-details-slider">
-      {/* <Preloader loading={loading} /> */}
       <Swiper className="thm-swiper__slider" {...mainSlideOptions}>
         <div className="swiper-wrapper">
           {data.map((data) => (
-            <SwiperSlide>
-            <div
+            <SwiperSlide key={data.id}>
+            <div 
               className="image-layer"
               style={{
                 backgroundImage: `url(${photoUrl + data.photo})`,

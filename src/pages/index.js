@@ -24,8 +24,8 @@ const Home = () => {
       <BrandOne />
       {/* <TestimonialOne /> */}
       <GalleryOne />
-      <WhyChoose />
-      <NewsOne />
+      {/* <WhyChoose />
+      <NewsOne /> */}
     </Layout>
   );
 };

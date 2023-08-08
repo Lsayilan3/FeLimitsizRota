@@ -1,29 +1,31 @@
 import galleryOne from "@/data/galleryOne";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SingleGallery from "./SingleGallery";
-import { useState } from "react";
-import axios from "axios";
-import { useEffect } from "react";
+import { apiCek } from "../GalleryOne/Service/mediaService";
 
 const { bg, galleryData } = galleryOne;
 
 const GalleryOne = () => {
-  const apiUrl = "https://api.limitsizrota.com/api/mediaPhotoes";
+  const [data, setData] = useState([]);
+  const [visibleData, setVisibleData] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(5);
 
-  const [data, setData] = useState([]);;
-
-  const apiCek = async () => {
-    try {
-      const response = await axios.get(apiUrl + "/getAll");
-      setData(response.data);
-    } catch (error) {
-      console.log("API çekme hatası ne", error);
-    }
+  const apiCeks = async () => {
+    const sonuc = await apiCek();
+    setData(sonuc);
   };
 
   useEffect(() => {
-    apiCek();
+    apiCeks();
   }, []);
+
+  useEffect(() => {
+    setVisibleData(data.slice(0, visibleCount));
+  }, [data, visibleCount]);
+
+  const loadMore = () => {
+    setVisibleCount(visibleCount + 5);
+  };
 
   return (
     <section className="gallery-one">
@@ -33,10 +35,22 @@ const GalleryOne = () => {
       ></div>
       <div className="gallery-one__container-box clearfix">
         <ul className="list-unstyled gallery-one__content clearfix">
-          {data.map((data) => (
-            <SingleGallery key={data.mediaPhotoId} data={data} />
+          {visibleData.map((data) => (
+            <SingleGallery key={data.destekId} data={data} />
           ))}
         </ul>
+        {visibleCount < data.length && (
+          <div style={{ textAlign: "center" }}>
+            <button
+              style={{ padding: "5px 30px 5px", marginTop: 10 }}
+              className="thm-btn comment-form__btn"
+              onClick={loadMore}
+            >
+              Daha Fazla
+            </button>
+          </div>
+
+        )}
       </div>
     </section>
   );

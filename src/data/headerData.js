@@ -26,12 +26,12 @@ const navItems = [
     href: "/about",
     subNavItems: [],
   },
-  {
-    id: 5,
-    name: "Haberler",
-    href: "/news",
-    subNavItems: [],
-  },
+  // {
+  //   id: 5,
+  //   name: "Haberler",
+  //   href: "/news",
+  //   subNavItems: [],
+  // },
   {
     id: 6,
     name: "İletişim",
@@ -52,7 +52,7 @@ const headerData = {
     {
       id: 1,
       icon: "icon-phone-call",
-      content: "+09 532 604 37 30",
+      content: "+0 532 604 37 30",
       subHref: "tel",
     },
     {

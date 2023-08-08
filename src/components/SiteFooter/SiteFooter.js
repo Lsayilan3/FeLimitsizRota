@@ -84,9 +84,9 @@ const SiteFooter = () => {
                         <button
                           type="button"
                           className="footer-widget__newsletter-btn"
-
+                          style={{ padding: "15px 139px 15px" }}
                         >
-                          Bize katıl
+                          Bize Katıl
                         </button>
                       </a>
                     </div>

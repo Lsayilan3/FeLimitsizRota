@@ -13,12 +13,12 @@ const footerData = {
   year: new Date().getFullYear(),
   author: "Limitsiz Rota",
   about:
-    "Gezi ve Tur Acentemize hoş geldiniz. Anlamlı bir deneyim sunmak için buradayız.",
+    "Limitsiz rota, keşfedilmemiş yolların çağrısıdır. Haritaların sınırlarını zorlayın, yeni manzaraları fethedin ve adrenalini hissedin. Her viraj, her tepenin ardında başka bir sürpriz ve macera yatıyor. Sadece bir araç değil, aynı zamanda özgürlüğünüzün ta kendisisiniz!",
   icons: [
     {
       id: 1,
       icon: "fas fa-phone-square-alt",
-      content: "+09 532 604 37 30",
+      content: "0 532 604 37 30",
       subHref: "tel",
     },
     {
@@ -34,9 +34,9 @@ const footerData = {
     },
   ],
   companies: [
-    { id: 1, link: "/tours", title: "Turlar" },
-    { id: 2, link: "/destinations", title: "Hedef Noktalar " },
-    { id: 3, link: "/news", title: "Haberler" },
+    { id: 1, link: "/tours", title: "Rotalar" },
+    { id: 2, link: "/destinations", title: "Varış Noktaları " },
+    // { id: 3, link: "/news", title: "Haberler" },
     { id: 4, link: "/about", title: "Hakkında" },
     { id: 5, link: "/contact", title: "İletişim" },
   ],

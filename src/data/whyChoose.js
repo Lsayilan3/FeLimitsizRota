@@ -4,11 +4,11 @@ import bg2 from "@/images/shapes/why-choose-right-map.png";
 const whyChoose = {
   bg,
   bg2,
-  toggleText: " Trips \n & tours",
-  title: "Neden Limitsiz Rota ",
+  toggleText: " Trips \n & route",
+  title: " Limitsiz Rota ",
   tagline: "Avantaj listelerimiz",
   description:
-    "Limitsiz Rota, geniş tur seçenekleri ve memnuniyet garantisiyle seyahatlerinizi unutulmaz kılıyor. Uygun fiyatlar, eşsiz deneyimler ile unutulmaz seyahatler sunuyoruz",
+    "Limitsiz rota, hayatın sunduğu özgürlüğün somut bir ifadesidir. Her yolculuk, rutinleri geride bırakarak yeni ufuklara doğru atılan cesur bir adımdır. Kendinizi bulacağınız, unutulmaz anılarla dolu bir yolculuğa çıkın.",
   lists: [
     {
       id: 1,

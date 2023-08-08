@@ -10,7 +10,7 @@ const TourDetails = () => {
     const router = useRouter();
     const { ulkeId } = router.query;
   return (
-    <Layout pageTitle="Tur Detayları">
+    <Layout pageTitle="Bölgeler">
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>

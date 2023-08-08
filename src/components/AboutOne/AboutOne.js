@@ -73,7 +73,7 @@ const AboutOne = () => {
                   </li>
                 ))}
               </ul>
-              <a href="contact" className="about-one__btn thm-btn">
+              <a href="destinations" className="about-one__btn thm-btn">
                 Şimdi bizimle rezervasyon yapın
               </a>
             </div>

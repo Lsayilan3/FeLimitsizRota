@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import SingleTour from "./SingleTour";
-import axios from "axios";
 import dynamic from "next/dynamic";
 import { ulkeCek } from "./Service/UlkeService";
 
@@ -32,8 +31,6 @@ const settings = {
 };
 
 const PopularTours = () => {
-  const [loading, setLoading] = useState(true);
-
 
   const [ulke, setUlke] = useState([]);
 
@@ -46,6 +43,7 @@ const PopularTours = () => {
     ulkeCeks();
   }, []);
   const filteredUlke = ulke.filter((tour) => tour.yayin !== 2).sort((a, b) => a.sira - b.sira);
+  
   return (
     <section className="popular-tours">
       <div className="popular-tours__container">

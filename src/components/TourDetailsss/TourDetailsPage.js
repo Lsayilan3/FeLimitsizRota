@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
-import axios from "axios";
 import TourDetailsLeft from "./TourDetailsLeft";
+import { fetchDataList } from "./Service/rotaDetayiService";
 import Preloader from "../Preloader/Preloader";
 
 const DestinationsDetailsPage = () => {
@@ -11,16 +11,10 @@ const DestinationsDetailsPage = () => {
   const [categoriesData, setCategoriesData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
-    axios
-      .get("https://localhost:44375/WebAPI/api/rotaDetayis/getall")
-      .then((response) => {
-        setCategoriesData(response.data);
-         setLoading(false);
-      })
-      .catch((error) => {
-        console.log("api categorytur hatası", error);
-      });
+    fetchDataList().then((categoriesData) => setCategoriesData(categoriesData));
+    setLoading(false)
   }, []);
 
 
@@ -30,12 +24,12 @@ const DestinationsDetailsPage = () => {
   const photoUrl = "https://api.limitsizrota.com";
 
   return (
-    <section style={{paddingTop: 0}} className="popular-tours-two">
-      {/* <Preloader loading={loading} /> */}
+    <section style={{ paddingTop: 0 }} className="popular-tours-two">
+      <Preloader loading={loading} />
       <Container>
-      {selectedCategory && (
-              <TourDetailsLeft photoUrl={photoUrl} turData={selectedCategory} data={selectedCategory}  />
-            )}
+        {selectedCategory && (
+          <TourDetailsLeft photoUrl={photoUrl} turData={selectedCategory} data={selectedCategory} />
+        )}
       </Container>
     </section>
   );

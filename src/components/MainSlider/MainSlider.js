@@ -31,6 +31,7 @@ const MainSlider = () => {
 
   const apiCeks = async () => {
     const sonuc = await apiCek();
+    setLoading(false)
     setData(sonuc);
   };
 
@@ -39,11 +40,10 @@ const MainSlider = () => {
   }, []);
 
 
- 
 
   return (
     <section className="main-slider">
-      {/* <Preloader loading={loading} /> */}
+      <Preloader loading={loading} />
       <Swiper className="thm-swiper__slider" {...mainSlideOptions}>
         <div className="swiper-wrapper">
           {data.map((data) => (

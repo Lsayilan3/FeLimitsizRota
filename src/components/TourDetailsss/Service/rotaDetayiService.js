@@ -22,10 +22,10 @@ export const fetchPhotos = async () => {
   }
 };
 
-export const fetchData = async (rotaId) => {
+export const fetchPuans = async (rotaId) => {
   try {
     const response = await axios.get(apiUrl+ `/puans/getlist?rotaId=${rotaId}`);
-    return response.data[0];
+    return response.data;
   } catch (error) {
     console.log('api cekme puan hatası', error);
     return null;
@@ -51,6 +51,19 @@ export const fetchRota = async (rotaId) => {
     return [];
   }
 };
+
+export const getFilteredGaleriData = async (rotaId) => {
+  try {
+    const response = await axios.get(apiUrl + "/rotaGaleris/getAll");
+    const filteredData = response.data.filter(item => item.resimTipiId === 1 && item.rotaId === rotaId);
+    return filteredData;
+  } catch (error) {
+    console.log("API çekme hatası rota galeri", error);
+    return [];
+  }
+};
+
+
 
 export const getPhotoUrl = () => {
     return process.env.FOTO_URL;

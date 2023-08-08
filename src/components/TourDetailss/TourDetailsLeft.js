@@ -5,15 +5,15 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { apiCek, getPhotoUrl } from "./Service/sehirlerService";
 
-const TourDetailsLeft = ({ turdata, userSelect = false }) => {
+const TourDetailsLeft = ({userSelect = false }) => {
   const router = useRouter();
   const { bolgelerId } = router.query;
   
-  const [dataList, setDataList] = useState([]);
+  const [data, setData] = useState([]);
 
   const apiCeks = async () => {
     const sonuc = await apiCek();
-    setDataList(sonuc);
+    setData(sonuc);
   };
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const TourDetailsLeft = ({ turdata, userSelect = false }) => {
 
   const photoUrl = getPhotoUrl();
 
-  const filteredDataList = dataList
+  const filteredDataList = data
     .filter((data) => data.bolgelerId === Number(bolgelerId) && data.yayin !== 2)
     .sort((a, b) => a.sira - b.sira);
 

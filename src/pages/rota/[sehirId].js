@@ -10,7 +10,7 @@ const TourDetailss = () => {
     const router = useRouter();
     const { sehirId } = router.query;
   return (
-    <Layout pageTitle="Tur Detayları">
+    <Layout pageTitle="Rotalar">
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>

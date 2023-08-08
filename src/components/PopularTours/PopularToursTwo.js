@@ -21,6 +21,7 @@ const PopularToursTwo = ({ toursPage = false }) => {
   const ulkeCeks = async () => {
     const sonuc = await ulkeCek();
     setUlke(sonuc);
+    setLoading(false)
   };
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const PopularToursTwo = ({ toursPage = false }) => {
 
   return (
     <section className="popular-tours-two">
-      {/* <Preloader loading={loading} /> */}
+      <Preloader loading={loading} />
       <Container>
         {!toursPage && (
           <div className="section-title text-center">

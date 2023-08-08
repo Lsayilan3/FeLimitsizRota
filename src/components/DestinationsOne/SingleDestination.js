@@ -7,7 +7,7 @@ import {  getPhotoUrl } from "./Service/rotaServicee";
 const SingleDestination = ({ data, col }) => {
   const { rotaId, foto, baslik,aciklama } = data || {};
 
-  const photoUrl = getPhotoUrl();
+  const photoUrl = "https://api.limitsizrota.com";
 
   return (
     <Col xl={col} lg={col}>

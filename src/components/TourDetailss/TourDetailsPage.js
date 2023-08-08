@@ -15,6 +15,7 @@ const DestinationsDetailsPage = () => {
   const apiCeks = async () => {
     const sonuc = await apiCek();
     setCategoriesData(sonuc);
+    setLoading(false)
   };
 
   useEffect(() => {
@@ -29,13 +30,13 @@ const DestinationsDetailsPage = () => {
 
   return (
     <section className="popular-tours-two">
-    {/* <Preloader loading={loading} /> */}
-    <Container>
-    {selectedCategory && (
-            <TourDetailsLeft photoUrl={photoUrl}  data={selectedCategory}  />
-          )}
-    </Container>
-  </section>
+      <Preloader loading={loading} />
+      <Container>
+        {selectedCategory && (
+          <TourDetailsLeft photoUrl={photoUrl} data={selectedCategory} />
+        )}
+      </Container>
+    </section>
   );
 };
 

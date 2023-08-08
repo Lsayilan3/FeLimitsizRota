@@ -1,40 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import NewsDetailsLeft from "./NewsDetailsLeft";
-import { useRouter } from "next/router";
-import axios from "axios";
-import Preloader from "../Preloader/Preloader";
+import Sidebar from "./Sidebar";
 
 const NewsDetailsPage = () => {
-  const router = useRouter();
-  const { haberId } = router.query;
-  const [categoriesData, setCategoriesData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    axios
-      .get("https://api.limitsizrota.com/api/haberlerCategories/getall")
-      .then((response) => {
-        setCategoriesData(response.data);
-         setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  const selectedCategory = categoriesData.find(
-    (category) => category.haberlerCategoryId === Number(haberId)
-  );
-
   return (
     <section className="news-details">
-      <Preloader loading={loading} />
       <Container>
         <Row>
-          {selectedCategory && (
-              <NewsDetailsLeft categories={selectedCategory} />
-            )}
+          <Col xl={8} lg={7}>
+            <NewsDetailsLeft />
+          </Col>
+          <Col xl={4} lg={5}>
+            <Sidebar />
+          </Col>
         </Row>
       </Container>
     </section>
