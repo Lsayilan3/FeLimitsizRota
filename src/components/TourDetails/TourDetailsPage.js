@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 import TourDetailsLeft from "./TourDetailsLeft";
 import { apiCek, getPhotoUrl } from "./Service/bolgelerService";
+import Preloader from "../Preloader/Preloader";
 
 const DestinationsDetailsPage = () => {
   const router = useRouter();
