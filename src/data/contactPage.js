@@ -9,7 +9,7 @@ const contactPage = {
     },
     {
       id: 2,
-      icon: "fab fa-twitter",
+      icon: "fa-brands fa-x-twitter",
       href: "https://twitter.com/limitsiz_rota?t=tOL5wdS8MdmvqhbTSXDYmQ&s=08",
     },
     {

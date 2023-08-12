@@ -42,7 +42,7 @@ const navItems = [
 
 const social = [
   { icon: "fa-facebook-square", link: "https://www.facebook.com/people/Limitsiz-Rota/pfbid02Fk5QJ1ycMJCK9f2L6x5Y1uc9pLEGLfLQ64KnyoJu223GFB3vE59RdLwh5LSPeUVEl/" },
-  { icon: "fa-twitter", link: "https://twitter.com/limitsiz_rota?t=tOL5wdS8MdmvqhbTSXDYmQ&s=08" },
+  { icon: "fa-brands fa-x-twitter", link: "https://twitter.com/limitsiz_rota?t=tOL5wdS8MdmvqhbTSXDYmQ&s=08" },
   { icon: "fa-instagram", link: "https://www.instagram.com/limitsiz_rota/" },
   { icon: "fa-youtube", link: "https://www.youtube.com/@limitsizrota" },
 ];

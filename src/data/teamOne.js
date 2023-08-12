@@ -12,7 +12,7 @@ const teamOne = {
       title: "consultant",
       socials: [
         { id: 1, icon: "fab fa-facebook", href: "#" },
-        { id: 2, icon: "fab fa-twitter", href: "#" },
+        { id: 2, icon: "fa-brands fa-x-twitterr", href: "#" },
         { id: 3, icon: "fab fa-instagram", href: "#" },
       ],
     },
@@ -23,7 +23,7 @@ const teamOne = {
       title: "consultant",
       socials: [
         { id: 1, icon: "fab fa-facebook", href: "#" },
-        { id: 2, icon: "fab fa-twitter", href: "#" },
+        { id: 2, icon: "fa-brands fa-x-twitter", href: "#" },
         { id: 3, icon: "fab fa-instagram", href: "#" },
       ],
     },
@@ -34,7 +34,7 @@ const teamOne = {
       title: "consultant",
       socials: [
         { id: 1, icon: "fab fa-facebook", href: "#" },
-        { id: 2, icon: "fab fa-twitter", href: "#" },
+        { id: 2, icon: "fa-brands fa-x-twitter", href: "#" },
         { id: 3, icon: "fab fa-instagram", href: "#" },
       ],
     },
@@ -45,7 +45,7 @@ const teamOne = {
       title: "consultant",
       socials: [
         { id: 1, icon: "fab fa-facebook", href: "#" },
-        { id: 2, icon: "fab fa-twitter", href: "#" },
+        { id: 2, icon: "fa-brands fa-x-twitter", href: "#" },
         { id: 3, icon: "fab fa-instagram", href: "#" },
       ],
     },
